@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {FormsModule } from '@angular/forms';
 @Component({
 selector :'app-servers',
 // template:`<app-server></app-server>
@@ -11,7 +12,7 @@ styleUrls:['./servers.component.css']
 export class ServersComponent{
    allowNewServer : boolean = false;
    serverStatus : string = 'Currently OFF !!!';
-
+   serverName : string = '';
 constructor(){
    setTimeout(() => {
        this.allowNewServer = true;
@@ -20,6 +21,10 @@ constructor(){
 onServerADD(){
 this.serverStatus = 'Server ON !!';
 } 
+
+onUpdateServerName(event : Event){
+this.serverName = (<HTMLInputElement>event.target).value;
+}
 
 
 }
