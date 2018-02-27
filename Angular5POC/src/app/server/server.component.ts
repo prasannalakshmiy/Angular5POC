@@ -11,7 +11,8 @@ import {Component} from '@angular/core';
 })
 export class ServerComponent {
 serverID : number = 10;
-serverstatus: string = 'serverName1';
+serverstatus = Math.random()>0.5 ? 'online': 'offline';
+
 
 getserverstatus() : string {
     return this.serverstatus;

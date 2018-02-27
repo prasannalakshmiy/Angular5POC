@@ -3,6 +3,5 @@
 {{serverStatus}}
 <input type="text" class="form-control" [(ngModel)]="serverName">
 <p>Server Name = {{serverName}} </p>
-<app-server></app-server>
-<hr>
-<app-server></app-server>
+
+<app-server *ngFor ="let server of servers"></app-server>
